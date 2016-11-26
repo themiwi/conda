@@ -1,0 +1,42 @@
+package:
+  name: clickclick
+  version: "1.2.1"
+
+source:
+  fn: 1.2.1.zip
+  url: https://github.com/zalando/python-clickclick/archive/1.2.1.zip
+  md5: 5637e0b9bf72770cd1d57a5919e330f7
+  patches:
+    - remove-flake8-dep.patch
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pyflakes >=0.8.1,!=1.2.0,!=1.2.1,!=1.2.2,<1.4.0
+    - click >=4.0
+    - pyyaml >=3.11
+    - flake8
+    - six
+
+  run:
+    - python
+    - click >=4.0
+    - pyyaml >=3.11
+
+test:
+  imports:
+    - clickclick
+
+  requires:
+    - pytest
+    - pytest-cov
+
+about:
+  home: https://github.com/zalando/python-clickclick
+  license: Apache Software License
+  summary: 'Click utility functions'
+  license_family: APACHE

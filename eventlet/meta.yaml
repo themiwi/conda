@@ -1,0 +1,29 @@
+package:
+  name: eventlet
+  version: "0.19.0"
+
+source:
+  fn: eventlet-0.19.0.tar.gz
+  url: https://pypi.python.org/packages/5a/e8/ac80f330a80c18113df0f4f872fb741974ad2179f8c2a5e3e45f40214cef/eventlet-0.19.0.tar.gz
+  md5: fde857181347d5b7b921541367a99204
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - greenlet >=0.3
+    - pyopenssl
+
+  run:
+    - python
+    - greenlet >=0.3
+    - pyopenssl
+
+about:
+  home: http://eventlet.net
+  license: MIT License
+  summary: 'Highly concurrent networking library'
+  license_family: MIT

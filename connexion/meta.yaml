@@ -1,0 +1,63 @@
+package:
+  name: connexion
+  version: "1.0.129"
+
+source:
+  fn: connexion-1.0.129.tar.gz
+  url: https://pypi.python.org/packages/ca/b1/1b40f5ba85b275bfc1878d030722809281e4a6f05c62b75abba3861be9f7/connexion-1.0.129.tar.gz
+  md5: 7837eb71ecd3815258c431877ec6e307
+  patches:
+    - remove-flake8-dep.patch
+    - change-pathlib-dep.patch
+
+build:
+  entry_points:
+    - connexion = connexion.cli:main
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - jsonschema >=2.5.1
+    - flask >=0.10.1
+    - pyyaml >=3.11
+    - requests >=2.9.1
+    - flake8
+    - six >=1.7
+    - strict-rfc3339 >=0.6
+    - swagger_spec_validator >=2.0.2
+    - clickclick >=1.2
+    - pathlib2
+
+  run:
+    - python
+    - jsonschema >=2.5.1
+    - flask >=0.10.1
+    - pyyaml >=3.11
+    - requests >=2.9.1
+    - six >=1.7
+    - strict-rfc3339 >=0.6
+    - swagger_spec_validator >=2.0.2
+    - clickclick >=1.2
+    - pathlib2
+
+test:
+  imports:
+    - connexion
+    - connexion.decorators
+
+  commands:
+    - connexion --help
+
+  requires:
+    - decorator
+    - mock
+    - pytest
+    - pytest-cov
+
+about:
+  home: https://github.com/zalando/connexion
+  license: Apache License Version 2.0
+  summary: 'Connexion - API first applications with OpenAPI/Swagger and Flask'
+  license_family: APACHE

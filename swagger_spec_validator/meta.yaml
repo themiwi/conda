@@ -1,0 +1,35 @@
+package:
+  name: swagger_spec_validator
+  version: "2.0.3"
+
+source:
+  fn: v2.0.3.zip
+  url: https://github.com/Yelp/swagger_spec_validator/archive/v2.0.3.zip
+  md5: df670a234151298dd7163a14d03f19dc
+
+build:
+  preserve_egg_dir: True
+  number: 2
+
+requirements:
+  build:
+    - python
+    - jsonschema
+    - setuptools
+    - six
+
+  run:
+    - python
+    - jsonschema
+    - setuptools
+    - six
+
+test:
+  imports:
+    - swagger_spec_validator
+
+about:
+  home: http://github.com/Yelp/swagger_spec_validator
+  license: Apache License, Version 2.0
+  summary: 'Validation of Swagger specifications'
+  license_family: Apache

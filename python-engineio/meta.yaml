@@ -1,0 +1,35 @@
+package:
+  name: python-engineio
+  version: "1.0.3"
+
+source:
+  fn: python-engineio-1.0.3.tar.gz
+  url: https://pypi.python.org/packages/c6/d9/8ab51955e421568c953b9ec8550a7c81b743d4336214d7687abbf2d3a017/python-engineio-1.0.3.tar.gz
+  md5: 6b7707dac9f9139fec859a45d940fee7
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - six >=1.9.0
+
+  run:
+    - python
+    - six >=1.9.0
+
+test:
+  imports:
+    - engineio
+
+  requires:
+    - eventlet
+    - mock
+
+about:
+  home: http://github.com/miguelgrinberg/python-engineio/
+  license: MIT License
+  summary: 'Engine.IO server'
+  license_family: MIT

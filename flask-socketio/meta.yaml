@@ -1,0 +1,40 @@
+package:
+  name: flask-socketio
+  version: "2.7.2"
+
+source:
+  fn: Flask-SocketIO-2.7.2.tar.gz
+  url: https://pypi.python.org/packages/13/a0/e6ffaee964ccf926da2f5e2befc8104d11533921965274a185a85687e8c4/Flask-SocketIO-2.7.2.tar.gz
+  md5: ad219fe1b3118aa21e120ac2ea9123b0
+
+build:
+  preserve_egg_dir: True
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - flask >=0.9
+    - python-socketio >=1.5.0
+    - python-engineio >=1.0.0
+
+  run:
+    - python
+    - setuptools
+    - flask >=0.9
+    - python-socketio >=1.5.0
+    - python-engineio >=1.0.0
+
+test:
+  imports:
+    - flask_socketio
+
+  requires:
+    - coverage
+
+about:
+  home: http://github.com/miguelgrinberg/Flask-SocketIO/
+  license: MIT License
+  summary: 'Socket.IO integration for Flask applications'
+  license_family: MIT

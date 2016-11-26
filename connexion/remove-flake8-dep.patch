@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index e1b906e..01813fb 100755
+--- a/setup.py
++++ b/setup.py
+@@ -71,7 +71,7 @@ setup(
+     url='https://github.com/zalando/connexion',
+     keywords='openapi oai swagger rest api oauth flask microservice framework',
+     license='Apache License Version 2.0',
+-    setup_requires=['flake8'],
++    setup_requires=[],
+     install_requires=get_install_requirements('requirements.txt'),
+     tests_require=['pytest-cov', 'pytest', 'mock', 'decorator'],
+     cmdclass={'test': PyTest},

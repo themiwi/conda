@@ -1,0 +1,36 @@
+package:
+  name: python-socketio
+  version: "1.6.0"
+
+source:
+  fn: python-socketio-1.6.0.tar.gz
+  url: https://pypi.python.org/packages/e9/07/6dacd7f87bc3f07f09f486c8b21a7fd29edf1a921e249dfdca8ad1b95f1b/python-socketio-1.6.0.tar.gz
+  md5: 7f4b975c20462d764ff1086b5f52a260
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - six >=1.9.0
+    - python-engineio >=1.0.0
+
+  run:
+    - python
+    - six >=1.9.0
+    - python-engineio >=1.0.0
+
+test:
+  imports:
+    - socketio
+
+  requires:
+    - mock
+
+about:
+  home: http://github.com/miguelgrinberg/python-socketio/
+  license: MIT License
+  summary: 'Socket.IO server'
+  license_family: MIT

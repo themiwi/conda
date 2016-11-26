@@ -1,0 +1,24 @@
+package:
+  name: strict-rfc3339
+  version: "0.7"
+
+source:
+  fn: strict-rfc3339-0.7.tar.gz
+  url: https://pypi.python.org/packages/56/e4/879ef1dbd6ddea1c77c0078cd59b503368b0456bcca7d063a870ca2119d3/strict-rfc3339-0.7.tar.gz
+  md5: 4d9b635b4df885bc37bc1189d66c9abc
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+about:
+  home: http://www.danielrichman.co.uk/libraries/strict-rfc3339.html
+  license: GNU General Public License v3 (GPLv3)
+  summary: 'Strict, simple, lightweight RFC3339 functions'
+  license_family: Public-Domain
