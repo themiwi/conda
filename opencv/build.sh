@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+PY_MAJOR=${PY_VER:0:1}
+
+mkdir build
+cd build
+
+cmake -LAH -G "$CMAKE_GENERATOR" \
+ -DWITH_EIGEN=ON \
+ -DWITH_CUDA=OFF \
+ -DWITH_OPENCL=OFF \
+ -DWITH_VTK=OFF \
+ -DWITH_OPENNI=OFF \
+ -DCMAKE_BUILD_TYPE=Release \
+ -DBUILD_TESTS=OFF \
+ -DBUILD_PERF_TESTS=OFF \
+ -DBUILD_DOCS=OFF \
+ -DCMAKE_INSTALL_PREFIX="$LIBRARY_PREFIX" \
+ -DEXECUTABLE_OUTPUT_PATH="$LIBRARY_PREFIX/bin" \
+ -DLIBRARY_OUTPUT_PATH="$LIBRARY_PREFIX/lib" \
+ -DPYTHON${PY_MAJOR}_EXECUTABLE="$PREFIX/python" \
+ -DPYTHON_INCLUDE_DIR="$PREFIX/include" \
+ -DPYTHON_PACKAGES_PATH="$PREFIX/Lib/site-packages/" \
+ -DPYTHON_LIBRARY="$PREFIX/libs/python${PY_VER//./}.so" \
+ -DPYTHON${PY_MAJOR}_NUMPY_INCLUDE_DIRS="$PREFIX/Lib/site-packages/numpy/core/include" \
+ -DCMAKE_INSTALL_PREFIX="$LIBRARY_PREFIX" \
+ -DOPENCV_EXTRA_MODULES_PATH="../contrib/modules" \
+ ..\opencv
+
+cmake --build . --target INSTALL --config Release

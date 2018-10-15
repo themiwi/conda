@@ -1,0 +1,38 @@
+{% set version = '3.3.1' %}
+{% set opencv_sha1 = '2c5a36f9c1a172ce73c038b00775753193b371eb' %}
+{% set opencv_contrib_sha1 = 'c12d70fe5d9d6ca2bdd17ba1509d9a67ca63eb46' %}
+
+package:
+  name: opencv-contrib
+  version: {{ version }}
+
+source:
+  - url: https://codeload.github.com/opencv/opencv/zip/{{ version }}
+    fn: opencv-{{ version }}.zip
+    sha1: {{ opencv_sha1 }}
+    folder: opencv
+  - url: https://codeload.github.com/opencv/opencv_contrib/zip/{{ version }}
+    fn: opencv_contrib-{{ version }}.zip
+    sha1: {{ opencv_contrib_sha1 }}
+    folder: contrib
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - cmake
+    - numpy
+    - hdf5
+
+  run:
+    - python
+    - numpy
+    - hdf5
+
+about:
+  home: https://github.com/opencv/opencv
+  license: BSD
+  license_file: opencv/LICENSE
+  summary: 'Open Source Computer Vision Library'
